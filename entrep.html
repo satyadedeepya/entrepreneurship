@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Soil to City – AgriTech Venture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --green-dark: #136c3e;
+      --green-main: #1d9c55;
+      --green-light: #93e59f;
+      --gray-bg: #f5faf7;
+      --gray-text: #222;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background: var(--gray-bg);
+      color: var(--gray-text);
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(90deg, var(--green-main) 0%, var(--green-light) 90%);
+      color: var(--gray-text);
+      padding: 36px 18px 32px 18px;
+      text-align: center;
+      box-shadow: 0 6px 24px 0 var(--green-light);
+      border-bottom: 2px solid var(--green-main);
+      position: relative;
+    }
+    h1 {
+      margin: 0.2em 0 0.3em;
+      font-size: 2.2em;
+      font-weight: 700;
+    }
+    .banner {
+      font-size: 1.14em;
+      margin-bottom: 0.6em;
+      min-height: 1em;
+      color: var(--green-dark);
+    }
+    nav {
+      background: var(--green-light);
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid var(--green-dark);
+    }
+    nav a {
+      margin: 0 21px;
+      color: var(--green-dark);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.07em;
+      transition: color .22s;
+      border-bottom: 2px solid transparent;
+      border-radius: 8px;
+    }
+    nav a:hover {
+      color: var(--green-main);
+      background: var(--green-light);
+      border-bottom: 2px solid var(--green-main);
+      box-shadow: 0 2px 8px var(--green-main);
+    }
+    section {
+      background: white;
+      margin: 27px auto 0;
+      padding: 24px 36px;
+      max-width: 830px;
+      border-radius: 16px;
+      box-shadow: 0 6px 28px 0 var(--green-light);
+      border: 2px solid var(--green-main);
+    }
+    h2 {
+      color: var(--green-dark);
+      margin-top: 0;
+      font-size: 1.3em;
+      border-bottom: 2px solid var(--green-light);
+      padding-bottom: 6px;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.07em;
+      color: var(--green-main);
+    }
+    .small {
+      color: #555;
+      font-size: 0.98em;
+    }
+    .team-card {
+      background: var(--green-light);
+      border-radius: 12px;
+      padding: 12px 17px;
+      margin-bottom: 14px;
+      font-size: 1.02em;
+      border: 1.3px solid var(--green-main);
+      box-shadow: 0 2px 10px var(--green-light);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .team-card img {
+      border-radius: 10px;
+      width: 74px;
+      height: 74px;
+      object-fit: cover;
+      border: 2px solid var(--green-main);
+      background: #fff;
+      margin-right: 8px;
+    }
+    .photo-gallery {
+      display: flex;
+      gap: 18px;
+      margin-top: 18px;
+      margin-bottom: 18px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+    .photo-gallery img {
+      width: 170px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid var(--green-main);
+      box-shadow: 0 2px 16px var(--green-light);
+      background: #fff;
+    }
+    .main-banner-img {
+      width: 90%;
+      max-width: 650px;
+      margin: 15px auto 25px auto;
+      display: block;
+      border-radius: 14px;
+      border: 3px solid var(--green-main);
+      box-shadow: 0 6px 28px var(--green-light);
+    }
+    .footer {
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+      padding: 16px 9px;
+      margin-top: 36px;
+      font-size: 1.05em;
+      border-radius: 18px 18px 0 0;
+      border: 2px solid var(--green-light);
+    }
+    input[type="text"], input[type="email"], textarea {
+      background: var(--gray-bg);
+      border-radius: 7px;
+      border: 1.3px solid var(--green-main);
+      padding: 8px;
+      margin-bottom: 7px;
+      font-size: 1em;
+      box-shadow: 0 1px 7px var(--green-light);
+    }
+    button {
+      background: var(--green-main);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 19px;
+      margin-top: 4px;
+      margin-bottom: 7px;
+      font-weight: bold;
+      box-shadow: 0 1px 10px var(--green-light);
+      cursor: pointer;
+      transition: .15s;
+    }
+    button:hover {
+      background: var(--green-dark);
+      color: white;
+      box-shadow: 0 0 9px var(--green-main);
+    }
+    @media (max-width: 600px) {
+      section { padding: 12px 8px; }
+      header { padding: 23px 8px 20px 8px;}
+      h1 { font-size: 1.17em;}
+      .photo-gallery img, .main-banner-img { width: 98px !important; height: 65px !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Soil to City</h1>
+    <div class="banner">Empowering farmers, ensuring supply chain transparency and fresh produce for cities.</div>
+    <!-- Main banner image -->
+    
+  </header>
+  <nav>
+    <a href="#problem">Problem</a>
+    <a href="#solution">Solution</a>
+    <a href="#prototype">Prototype</a>
+    <a href="#market">Market</a>
+    <a href="#team">Team</a>
+    <a href="#financials">Financials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section id="problem">
+    <h2 class="section-title">Problem Statement</h2>
+    <p>
+      Small farmers struggle to reach city markets and depend on middlemen, which lowers their income. Urban consumers pay higher prices and get poor-quality, less-fresh produce. A broken supply chain leads to waste and unsustainable practices.
+    </p>
+    <div class="photo-gallery">
+      <img src=data:image/jpeg;base64,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alt="Farming Problem 1">
+      
+    </div>
+  </section>
+  <section id="solution">
+    <h2 class="section-title">Our Solution</h2>
+    <ul>
+      <li>Digital platform connects farmers directly with urban consumers and businesses</li>
+      <li>Logistics and fair-pricing mechanisms with direct delivery—no middlemen</li>
+      <li>Features: real-time listings, traceability, efficient transport, secure payments, transparent ratings</li>
+    </ul>
+    <div class="photo-gallery">
+      <img src="Screenshot-2025-10-05-023925.jpg" alt="Direct From Farm">
+      <img src="Screenshot-2025-10-05-024138.jpg" alt="Farm Team Working">
+    </div>
+  </section>
+  <section id="prototype">
+    <h2 class="section-title">Prototype / Gallery</h2>
+    <div class="photo-gallery">
+      <img src="Screenshot-2025-10-05-024028.jpg" alt="Prototype Photo 1">
+      <img src="Screenshot-2025-10-05-022302.jpg" alt="Prototype Photo 2">
+    </div>
+  </section>
+  <section id="market">
+    <h2 class="section-title">Market Size & Competition</h2>
+    <ul>
+      <li><b>Total Addressable Market:</b> ₹85,000 crore (India's fresh produce)</li>
+      <li><b>SAM:</b> ₹12,000 crore (Urban focus)</li>
+      <li><b>SOM:</b> ₹3.75 crore (initial launch targets)</li>
+      <li><b>Main competitors:</b> Ninjacart, BigBasket, Grofers, Farmdrop, etc.</li>
+    </ul>
+  </section>
+  <section id="team">
+    <h2 class="section-title">Our Team & Mentors</h2>
+    <div class="team-card">
+      <img src="prof1.jpg" alt="Satya">
+      <div>
+        <strong>Satya</strong>
+        <div>AgriTech, Python - Lead</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <img src="prof2.jpg" alt="Tejasri">
+      <div>
+        <strong>Tejasri</strong>
+        <div>Product Development - Co-Founder</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <img src="prof3.jpg" alt="Anoohya">
+      <div>
+        <strong>Anoohya</strong>
+        <div>Operations - Co-Founder</div>
+      </div>
+    </div>
+    <div class="small">
+      <b>Mentors:</b> Dr. Amit Sharma (Tech Strategy), Ms. Priya Verma (Business Model)<br>
+      <i>Seeking: Mentors for fundraising and scaling</i>
+    </div>
+  </section>
+  <section id="financials">
+    <h2 class="section-title">Financials & Growth</h2>
+    <ul>
+      <li><b>Revenue (Year 1):</b> ₹30,00,000</li>
+      <li><b>Gross Profit (Year 1):</b> ₹18,00,000</li>
+      <li><b>Net Profit (Year 1):</b> ₹5,00,000</li>
+      <li><b>Break-even Month:</b> 6</li>
+      <li><b>Roadmap:</b>
+        <ol>
+          <li>Build MVP (months 1–3)</li>
+          <li>Beta launch (months 4–6)</li>
+          <li>Scale to 500+ users, activate revenue streams (months 7–9)</li>
+          <li>Expand to new markets (months 10–12)</li>
+        </ol>
+      </li>
+    </ul>
+  </section>
+  <section id="contact">
+    <h2 class="section-title">Contact / Feedback</h2>
+    <form onsubmit="sendContact(event)">
+      <input type="text" placeholder="Your Name" required/>
+      <input type="email" placeholder="Email" required/>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p class="small">Site powered by Wadhwani Venture Journey project presentation.</p>
+  </section>
+  <div class="footer">
+    &copy; 2025 Soil to City – AgriTech for India
+  </div>
+  <script>
+    function sendContact(e) {
+      e.preventDefault();
+      alert("Demo: Message sent! We'll connect soon.");
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
+
